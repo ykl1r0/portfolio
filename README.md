@@ -3,7 +3,7 @@
 ![McGill](https://img.shields.io/badge/McGill_University-ED1B2F?style=flat-square&logoColor=white)
 ![Software Engineering](https://img.shields.io/badge/Software_Engineering-333333?style=flat-square)
 ![Co-op](https://img.shields.io/badge/Co--op_Student-555555?style=flat-square)
-![Year](https://img.shields.io/badge/3rd_Year-6C63FF?style=flat-square)
+![Year](https://img.shields.io/badge/2nd_Year-6C63FF?style=flat-square)
 
 This repository contains projects worked on to enrich my learning experience in software.
 
