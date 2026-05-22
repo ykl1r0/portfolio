@@ -1,5 +1,5 @@
 /*
- * File: fibonacci_7seg.s
+ * File: fibonacci.s
  * Description: Computes Fibonacci numbers in Decimal across six displays.
  *              Once overflowed, loops the "OVAFLO" alert infinitely.
  * Target: CPulator ARMv7-A Architecture (DE1-SoC Core Registers)
