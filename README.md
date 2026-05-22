@@ -5,9 +5,7 @@
 ![Co-op](https://img.shields.io/badge/Co--op_Student-555555?style=flat-square)
 ![Year](https://img.shields.io/badge/3rd_Year-6C63FF?style=flat-square)
 
-Second-year software engineering student at McGill, entering my third year. I enjoy coding and solving problems.
-
-This repository contains projects I've worked on to enrich my learning experience in software.
+This repository contains projects worked on to enrich my learning experience in software.
 
 ---
 
@@ -20,11 +18,19 @@ This repository contains projects I've worked on to enrich my learning experienc
 
 ---
 
-##  Skills
+## Skills
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
+![ARM Assembly](https://img.shields.io/badge/ARM_Assembly-0091BD?style=flat-square&logo=arm&logoColor=white)
 ![C](https://img.shields.io/badge/C-00599C?style=flat-square&logo=c&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
-![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
-![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black)
+![VHDL](https://img.shields.io/badge/VHDL-6C63FF?style=flat-square)
+![Bash](https://img.shields.io/badge/Bash_Scripting-4EAA25?style=flat-square&logo=gnubash&logoColor=white)
+
+---
+
+## 📬 Contact
+
+[![Email](https://img.shields.io/badge/Email-D14836?style=flat-square&logo=gmail&logoColor=white)](mailto:your@email.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white)](#)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/yanniklironomos)
