@@ -1,5 +1,10 @@
 # Yanni
 
+<p align="center">
+  <img src="https://demolab.com" alt="Typing SVG" />
+</p>
+
+
 ![McGill](https://img.shields.io/badge/McGill_University-ED1B2F?style=flat-square&logoColor=white)
 ![Software Engineering](https://img.shields.io/badge/Software_Engineering-333333?style=flat-square)
 ![Co-op](https://img.shields.io/badge/Co--op_Student-555555?style=flat-square)
