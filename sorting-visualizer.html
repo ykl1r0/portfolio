@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bubble Sort Visualizer</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #0f0f0f;
+      color: #e0e0e0;
+      font-family: 'Courier New', monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-size: 18px;
+      font-weight: normal;
+      letter-spacing: 0.15em;
+      color: #888;
+      margin-bottom: 8px;
+    }
+
+    p.sub {
+      font-size: 12px;
+      color: #444;
+      letter-spacing: 0.08em;
+      margin-bottom: 40px;
+    }
+
+    #bar-container {
+      display: flex;
+      align-items: flex-end;
+      gap: 3px;
+      height: 300px;
+      margin-bottom: 40px;
+    }
+
+    .bar {
+      width: 18px;
+      background: #e0e0e0;
+      border-radius: 2px 2px 0 0;
+      transition: height 0.08s ease;
+    }
+
+    .bar.comparing { background: #f59e0b; }
+    .bar.swapping  { background: #ef4444; }
+    .bar.sorted    { background: #22c55e; }
+
+    .controls {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      background: transparent;
+      border: 1px solid #333;
+      color: #ccc;
+      padding: 8px 20px;
+      font-family: 'Courier New', monospace;
+      font-size: 13px;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: border-color 0.15s, color 0.15s;
+    }
+
+    button:hover { border-color: #888; color: #fff; }
+    button:disabled { opacity: 0.3; cursor: not-allowed; }
+
+    #status {
+      font-size: 12px;
+      color: #555;
+      letter-spacing: 0.08em;
+      height: 20px;
+    }
+
+    .legend {
+      display: flex;
+      gap: 20px;
+      margin-top: 24px;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      color: #555;
+      letter-spacing: 0.05em;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 2px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>BUBBLE SORT</h1>
+  <p class="sub">sorting visualizer</p>
+
+  <div id="bar-container"></div>
+
+  <div class="controls">
+    <button id="btn-new" onclick="generateArray()">new array</button>
+    <button id="btn-sort" onclick="startSort()">sort</button>
+  </div>
+
+  <div id="status">press sort to begin</div>
+
+  <div class="legend">
+    <div class="legend-item"><div class="dot" style="background:#f59e0b"></div> comparing</div>
+    <div class="legend-item"><div class="dot" style="background:#ef4444"></div> swapping</div>
+    <div class="legend-item"><div class="dot" style="background:#22c55e"></div> sorted</div>
+  </div>
+
+  <script>
+    const N = 30;
+    let arr = [];
+    let sorting = false;
+
+    function sleep(ms) {
+      return new Promise(r => setTimeout(r, ms));
+    }
+
+    function generateArray() {
+      if (sorting) return;
+      arr = Array.from({ length: N }, () => Math.floor(Math.random() * 90) + 10);
+      renderBars(arr, [], []);
+      document.getElementById('status').textContent = 'press sort to begin';
+    }
+
+    function renderBars(arr, comparing = [], swapping = [], sorted = []) {
+      const container = document.getElementById('bar-container');
+      container.innerHTML = '';
+      arr.forEach((val, i) => {
+        const bar = document.createElement('div');
+        bar.className = 'bar';
+        bar.style.height = val * 2.8 + 'px';
+        if (swapping.includes(i)) bar.classList.add('swapping');
+        else if (comparing.includes(i)) bar.classList.add('comparing');
+        else if (sorted.includes(i)) bar.classList.add('sorted');
+        container.appendChild(bar);
+      });
+    }
+
+    async function startSort() {
+      if (sorting) return;
+      sorting = true;
+      document.getElementById('btn-sort').disabled = true;
+      document.getElementById('btn-new').disabled = true;
+
+      const a = [...arr];
+      const n = a.length;
+      const sortedIndices = [];
+
+      for (let i = 0; i < n - 1; i++) {
+        for (let j = 0; j < n - i - 1; j++) {
+          document.getElementById('status').textContent = `comparing index ${j} and ${j + 1}`;
+          renderBars(a, [j, j + 1], [], sortedIndices);
+          await sleep(60);
+
+          if (a[j] > a[j + 1]) {
+            renderBars(a, [], [j, j + 1], sortedIndices);
+            await sleep(60);
+            [a[j], a[j + 1]] = [a[j + 1], a[j]];
+          }
+        }
+        sortedIndices.push(n - 1 - i);
+        renderBars(a, [], [], sortedIndices);
+      }
+
+      sortedIndices.push(0);
+      renderBars(a, [], [], sortedIndices);
+      arr = a;
+      document.getElementById('status').textContent = 'sorted ✓';
+      sorting = false;
+      document.getElementById('btn-sort').disabled = false;
+      document.getElementById('btn-new').disabled = false;
+    }
+
+    generateArray();
+  </script>
+</body>
+</html>
