@@ -1,7 +1,10 @@
 # Yanni
 
-<p align="center">
-  <img src="https://demolab.com" alt="Typing SVG" />
+
+<p align="left">
+  <a href="https://git.io">
+    <img src="https://demolab.com" alt="Typing SVG" />
+  </a>
 </p>
 
 
