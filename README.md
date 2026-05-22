@@ -11,10 +11,7 @@ This repository contains projects worked on to enrich my learning experience in 
 
 ## Projects
 
-| Project | Description | Stack |
-|---|---|---|
-| ![Data Analysis](https://img.shields.io/badge/Data_Analysis-20B2AA?style=flat-square) | Explored datasets to find patterns and trends | ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white) ![pandas](https://img.shields.io/badge/pandas-150458?style=flat-square&logo=pandas&logoColor=white) ![matplotlib](https://img.shields.io/badge/matplotlib-11557C?style=flat-square) |
-| ![Minimal](https://img.shields.io/badge/Minimal-444444?style=flat-square) | A minimal web project | ![HTML](https://img.shields.io/badge/HTML-E34F26?style=flat-square&logo=html5&logoColor=white) ![CSS](https://img.shields.io/badge/CSS-1572B6?style=flat-square&logo=css3&logoColor=white) |
+This repository contains projects worked on to enrich my learning experience in software.
 
 ---
 
